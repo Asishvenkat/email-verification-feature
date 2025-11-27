@@ -91,22 +91,21 @@ Below are the images present in the `public` folder, shown in the same order (1,
 
 ---
 
-##  Credits
-Developed by asishvenkat
-
----
-
-##  Contact
-For questions or support, contact [asishvenkat.a2004@gmail.com](mailto:asishvenkat.a2004@gmail.com)
-
 ## Security & Scalability
 - Tokens are signed, expirable, and non-reusable
 - HTTPS enforced in email links
 - Rate limiting for resends
 - Scalable DB and stateless token design
+  
+##  Credits
+Developed by asishvenkat
 
-## Demo Video
-(Add a short screen recording here)
+##  Credits
+Developed by **Asish Venkat**
 
-## (Optional) Deployed Demo
-(Add demo URL or Postman collection if deployed)
+---
+
+Thank you for reviewing this project!
+
+
+
