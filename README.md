@@ -1,12 +1,12 @@
 
-# Trizen Email Verification Signup System
+#  Email Verification Signup System
 
 ## Overview
 A full-featured, production-grade signup and email verification system built with Node.js, Express, MongoDB Atlas, JWT, and React. Includes secure authentication, modern UI, and Docker support.
 
 ---
 
-## 🚀 Setup & Run Instructions
+##  Setup & Run Instructions
 
 ### 1. Clone the repository
 ```sh
@@ -47,16 +47,20 @@ Watch the project demo here: [Google Drive Video](https://drive.google.com/file/
 
 Below are the images present in the `public` folder, shown in the same order (1, 2, 3, 4):
 
-<div align="center">
-	<img src="frontend/public/1.png" alt="Image 1" width="420" style="margin:16px;" />
-	<img src="frontend/public/2.png" alt="Image 2" width="420" style="margin:16px;" />
-</div>
-<div align="center">
-	<img src="frontend/public/3.png" alt="Image 3" width="420" style="margin:16px;" />
-	<img src="frontend/public/4.png" alt="Image 4" width="420" style="margin:16px;" />
+<div align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="frontend/public/1.png" alt="Image 1" width="420" />
+  <img src="frontend/public/2.png" alt="Image 2" width="420" />
 </div>
 
-## 🛠️ Design Choices
+<br/>
+
+<div align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="frontend/public/3.png" alt="Image 3" width="420" />
+  <img src="frontend/public/4.png" alt="Image 4" width="420" />
+</div>
+
+
+##  Design Choices
 - **JWT for verification tokens:** Secure, expirable, and stateless.
 - **MongoDB Atlas:** Scalable, cloud-based database.
 - **Nodemailer:** For sending transactional emails.
@@ -68,7 +72,7 @@ Below are the images present in the `public` folder, shown in the same order (1,
 
 ---
 
-## 📦 Libraries & Services Used
+##  Libraries & Services Used
 - **Backend:**
 	- express
 	- mongoose
@@ -87,22 +91,21 @@ Below are the images present in the `public` folder, shown in the same order (1,
 
 ---
 
-## 🙏 Credits
-Developed by asishvenkat
-
----
-
-## 📧 Contact
-For questions or support, contact [asishvenkat.a2004@gmail.com](mailto:asishvenkat.a2004@gmail.com)
-
 ## Security & Scalability
 - Tokens are signed, expirable, and non-reusable
 - HTTPS enforced in email links
 - Rate limiting for resends
 - Scalable DB and stateless token design
+  
+##  Credits
+Developed by asishvenkat
 
-## Demo Video
-(Add a short screen recording here)
+##  Credits
+Developed by **Asish Venkat**
 
-## (Optional) Deployed Demo
-(Add demo URL or Postman collection if deployed)
+---
+
+Thank you for reviewing this project!
+
+
+
