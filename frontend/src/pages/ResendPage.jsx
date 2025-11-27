@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useLocation } from 'react-router-dom';
 
 function ResendPage() {
@@ -11,7 +13,7 @@ function ResendPage() {
     e.preventDefault();
     setMsg('');
     try {
-      await axios.post('http://localhost:5000/api/resend', { email });
+      await axios.post(`${BACKEND_URL}/api/resend`, { email });
       setMsg('Verification email resent!');
     } catch (err) {
       setMsg(err.response?.data?.message || 'Error');

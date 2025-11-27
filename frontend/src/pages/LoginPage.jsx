@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
@@ -13,7 +15,7 @@ function LoginPage() {
     e.preventDefault();
     setMsg('');
     try {
-      const res = await axios.post('http://localhost:5000/api/login', form);
+      const res = await axios.post(`${BACKEND_URL}/api/login`, form);
       setMsg('Login successful! Redirecting...');
       setTimeout(() => navigate('/dashboard', { state: { name: res.data.name, email: res.data.email } }), 1500);
     } catch (err) {

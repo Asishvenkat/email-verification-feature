@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useNavigate } from 'react-router-dom';
 
 function SignupPage() {
@@ -30,7 +32,7 @@ function SignupPage() {
         setMsg('All fields are required.');
         return;
       }
-      const res = await axios.post('http://localhost:5000/api/signup', form);
+      const res = await axios.post(`${BACKEND_URL}/api/signup`, form);
       if (res.status === 201 || res.status === 200) {
         setMsg('Signup successful! Check your email to verify.');
         navigate('/check-email', { state: { email: form.email } });

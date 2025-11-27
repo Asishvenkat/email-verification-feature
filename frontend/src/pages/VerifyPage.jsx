@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import axios from 'axios';
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 import { useSearchParams, useNavigate } from 'react-router-dom';
 
 function VerifyPage() {
@@ -17,7 +19,7 @@ function VerifyPage() {
       return;
     }
 
-    axios.get(`http://localhost:5000/api/verify?token=${token}`)
+    axios.get(`${BACKEND_URL}/api/verify?token=${token}`)
       .then(res => {
         const msg = res.data.message?.toLowerCase() || '';
 
