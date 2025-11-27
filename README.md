@@ -60,7 +60,7 @@ Below are the images present in the `public` folder, shown in the same order (1,
 </div>
 
 
-## 🛠️ Design Choices
+##  Design Choices
 - **JWT for verification tokens:** Secure, expirable, and stateless.
 - **MongoDB Atlas:** Scalable, cloud-based database.
 - **Nodemailer:** For sending transactional emails.
