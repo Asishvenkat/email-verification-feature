@@ -31,7 +31,7 @@ A full-featured, production-grade signup and email verification system built wit
 +----------+----------+                      |
            |                                 v
            |                      +-----------+-----------+
-           |                      |      Mailjet API      |
+           |                      |      Mailjet          |
            |                      |   (Email Delivery)    |
            |                      +-----------+-----------+
            |                                  |
