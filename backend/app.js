@@ -4,8 +4,15 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/userRoutes');
 
+
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:3000',
+    'https://email-verification-feature.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 
