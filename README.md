@@ -6,6 +6,63 @@ A full-featured, production-grade signup and email verification system built wit
 
 ---
 
+
+## Deployed URLs
+
+- **Frontend:** [https://email-verification-feature.vercel.app](https://email-verification-feature.vercel.app)
+- **Backend API (Docker on Render):** [https://email-verification-backend-d7to.onrender.com](https://email-verification-backend-d7to.onrender.com)
+
+---
+
+## Architectural Flow
+```
++---------------------+          +-----------------------+
+|     User Browser    | <------> |   Frontend (Vercel)   |
+|   (React + Vite)    |          | Loads UI & Sends APIs |
++----------+----------+          +-----------+-----------+
+           |                                 |
+           |     API Calls (Signup / Resend / Verify) 
+           |                                 |
+           v                                 |
++----------+----------+                      |
+|      Backend        |                      |
+| (Render, Express)   | ---------------------+
+|   Dockerized API    |   1. Send Email (HTTPS)
++----------+----------+                      |
+           |                                 v
+           |                      +-----------+-----------+
+           |                      |      Mailjet API      |
+           |                      |   (Email Delivery)    |
+           |                      +-----------+-----------+
+           |                                  |
+           |          2. Email Delivered       v
+           |                      +-----------------------+
+           |                      |   User Email Inbox    |
+           |                      | (Gmail / Outlook etc) |
+           |                      +-----------+-----------+
+           |                                  |
+           |      3. User clicks verification |
+           |         https://frontend/verify?token=XYZ
+           |                                  |
+           |                                  v
+           |                      +-----------------------+
+           |                      |   Frontend (Vercel)   |
+           |                      |  Loads Verify Page    |
+           |                      +-----------+-----------+
+           |                                  |
+           |      4. Frontend → Backend: /api/verify?token
+           |                                  |
+           v                                  v
++----------+----------+          +-----------+-----------+
+|   MongoDB Atlas     | <------- |      Backend         |
+| (User Storage:      |   5.     |  Verifies Token,     |
+| users, tokens)      | Updates  | Updates User Status  |
++---------------------+  User    +-----------------------+
+```
+### FINAL RESULT:
+Backend responds → Frontend shows "Success" or "Token expired"
+
+
 ##  Setup & Run Instructions
 
 ### 1. Clone the repository
