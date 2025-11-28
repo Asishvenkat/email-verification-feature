@@ -7,4 +7,5 @@ module.exports = {
   smtpHost: process.env.SMTP_HOST,
   smtpPort: process.env.SMTP_PORT,
   frontendUrl: process.env.FRONTEND_URL || 'http://localhost:3000',
+  emailFrom: process.env.EMAIL_FROM || process.env.SMTP_USER,
 };

@@ -36,7 +36,7 @@ async function sendVerificationEmail(to, verificationUrl) {
     </div>
   `;
   const info = await transporter.sendMail({
-    from: `Verify <${config.smtpUser}>`,
+    from: `Verify <${config.emailFrom}>`,
     to,
     subject: 'Verify your email',
     html: htmlContent
