@@ -11,12 +11,13 @@ function SignupPage() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  function validatePassword(password) {
-    if (password.length < 6) return 'Password must be at least 6 characters.';
-    if (!/[0-9]/.test(password)) return 'Password must contain at least one number.';
-    if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return 'Password must contain at least one special character.';
-    return null;
-  }
+    function validatePassword(password) {
+      if (password.length < 8) return 'Password must be at least 8 characters.';
+      if (!/[A-Za-z]/.test(password)) return 'Password must contain at least one letter.';
+      if (!/[0-9]/.test(password)) return 'Password must contain at least one number.';
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) return 'Password must contain at least one special character.';
+      return null;
+    }
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -86,6 +87,9 @@ function SignupPage() {
           <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required style={{
             padding: '13px 14px', borderRadius: 8, border: '1.5px solid #c7d2fe', fontSize: 17, background: '#f8fafc', outline: 'none', transition: 'border 0.2s', marginBottom: 2
           }} />
+          <div style={{ fontSize: 13, color: '#64748b', marginTop: -10, marginBottom: 8, marginLeft: 2 }}>
+            Min. 8 characters, 1 letter, 1 number and 1 special character
+          </div>
           <button type="submit" style={{
             padding: '13px 0', borderRadius: 8, border: 'none', background: 'linear-gradient(90deg, #6366f1 0%, #2563eb 100%)', color: '#fff', fontWeight: 700, fontSize: 18, cursor: 'pointer', marginTop: 10, boxShadow: '0 2px 8px #c7d2fe', letterSpacing: 0.5
           }}>Sign Up</button>
